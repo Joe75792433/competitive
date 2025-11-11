@@ -1,0 +1,8 @@
+/*
+!/.devcontainer
+
+!/.secret
+/.secret/*
+!/.secret/atcoder
+/.secret/atcoder/*
+!/.secret/atcoder/*_template.*

@@ -1,0 +1,9 @@
+{
+    "files.defaultLanguage": "c++",
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "chat.disableAIFeatures": true,
+    "editor.acceptSuggestionOnEnter": "off",
+    "files.eol": "\n",
+    "editor.wrappingIndent": "deepIndent",
+    "explorer.confirmDragAndDrop": false
+}
