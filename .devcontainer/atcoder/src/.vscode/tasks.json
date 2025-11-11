@@ -7,16 +7,16 @@
             "dependsOn": [
                 "execute oj-bundle",
                 "open expanded.cpp",
-                "submit file"
+                "submit expanded file"
             ]
         },
         {
             "type": "shell",
-            "label": "submit file",
+            "label": "submit expanded file",
             "command": "acc",
             "args": [
                 "submit",
-                "${fileBasename}",
+                "${fileBasenameNoExtension}_expanded.cpp",
                 "--",
                 "--no-open",
                 "--yes"
