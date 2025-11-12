@@ -18,7 +18,6 @@
                 "submit",
                 "${fileBasenameNoExtension}_expanded.cpp",
                 "--",
-                "--no-open",
                 "--yes"
             ],
             "options": {
