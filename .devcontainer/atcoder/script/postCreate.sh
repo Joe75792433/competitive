@@ -4,8 +4,7 @@
 cat $SRC_FOLDER/bash_append/.bashrc >> ~/.bashrc
 
 # vscode settings files
-rm $WORKSPACE_FOLDER/.vscode/*
-cp $SRC_FOLDER/.vscode/* $WORKSPACE_FOLDER/.vscode/
+cp -r $SRC_FOLDER/.vscode $WORKSPACE_FOLDER
 
 # online-judge-tools files
 mkdir -p ~/.local/share/online-judge-tools/

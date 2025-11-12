@@ -16,8 +16,7 @@
     "workspaceMount": "source=${localEnv:HOME}/competitive,target=/workspace/competitive,type=bind,consistency=cached",
     "workspaceFolder": "/workspace/competitive",
 	"mounts": [
-		"source=cp-atcoder-venv,target=${containerWorkspaceFolder}/venv,type=volume",
-		"source=cp-atcoder-vscode-settings,target=${containerWorkspaceFolder}/.vscode,type=volume"
+		"source=cp-atcoder-venv,target=${containerWorkspaceFolder}/venv,type=volume"
 	],
 	"postCreateCommand": "WORKSPACE_FOLDER=${containerWorkspaceFolder} SRC_FOLDER=${containerWorkspaceFolder}/.devcontainer/atcoder/src SECRET_FOLDER=${containerWorkspaceFolder}/.secret ${containerWorkspaceFolder}/.devcontainer/atcoder/script/postCreate.sh",
 	"postAttachCommand": "oj login --check https://atcoder.jp/; acc session; acc check-oj",
