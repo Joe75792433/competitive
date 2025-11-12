@@ -43,6 +43,7 @@ T IN(){T x; cin >> x; return (x);}
 #define POSSIBLE(n) cout << ((n) ? "POSSIBLE" : "IMPOSSIBLE") << '\n'
 #define Possible(n) cout << ((n) ? "Possible" : "Impossible") << '\n'
 #define Alice(n) cout << ((n) ? "Alice" : "Bob") << '\n'
+#define First(n) cout << ((n) ? "First" : "Second") << '\n'
 
 #define all(x) (x).begin(), (x).end()
 #define siz(x) int((x).size())
