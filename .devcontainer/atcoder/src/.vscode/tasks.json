@@ -1,6 +1,19 @@
 {
     "tasks": [
         {
+            "type": "shell",
+            "label": "コンテスト用のフォルダを準備する",
+            "command": "acc",
+            "args": [
+                "new",
+                "${input:contestId}"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        },
+        {
             "label": "ヘッダーファイルを展開して提出する",
             "detail": "開いているファイルにoj-bundleを適用して生成したファイルを提出する",
             "dependsOrder": "sequence",
@@ -487,6 +500,13 @@
                 "kind": "build",
                 "isDefault": false
             }
+        }
+    ],
+    "inputs": [
+        {
+            "id": "contestId",
+            "description": "コンテストidを入力（https://atcoder.jp/contests/abc123ならabc123）",
+            "type": "promptString"
         }
     ],
     "version": "2.0.0"
