@@ -6,7 +6,7 @@
             "command": "acc",
             "args": [
                 "new",
-                "${input:contestId}"
+                "${input:ContestId}"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"
@@ -162,7 +162,7 @@
         },
         {
             "label": "main,generateを使ってREケースを見つける",
-            "detail": "開いているファイルと同じフォルダのmain.cpp,generate.cppをビルドしてoj g/i --hackを実行する",
+            "detail": "開いているファイルと同じフォルダのmain,generateをビルドしてoj g/i --hackを実行する",
             "dependsOrder": "sequence",
             "dependsOn": [
                 "build main,generate for oj hack",
@@ -184,8 +184,8 @@
                 "--jobs",
                 "4",
                 "--hack",
-                "./main.out",
-                "./generate.out"
+                "./${fileDirnameBasename}_main.out",
+                "./${fileDirnameBasename}_generate.out"
             ],
             "options": {
                 "cwd": "${fileDirname}"
@@ -196,14 +196,14 @@
             "label": "build main,generate for oj hack",
             "dependsOrder": "parallel",
             "dependsOn": [
-                "main.cpp debug build",
-                "generate.cpp normal build"
+                "main file debug build",
+                "generate file normal build"
             ],
             "hide": true
         },
         {
             "label": "main,tle,generateを使ってWAケースを見つける",
-            "detail": "開いているファイルと同じフォルダのmain.cpp,tle.cpp,generate.cppをビルドしてoj g/i --hackを実行する",
+            "detail": "開いているファイルと同じフォルダのmain,tle,generateをビルドしてoj g/i --hackを実行する",
             "dependsOrder": "sequence",
             "dependsOn": [
                 "build main,tle,generate for oj hack",
@@ -225,10 +225,10 @@
                 "--jobs",
                 "4",
                 "--hack-expected",
-                "./tle.out",
+                "./${fileDirnameBasename}_tle.out",
                 "--hack",
-                "./main.out",
-                "./generate.out"
+                "./${fileDirnameBasename}_main.out",
+                "./${fileDirnameBasename}_generate.out"
             ],
             "options": {
                 "cwd": "${fileDirname}"
@@ -239,22 +239,22 @@
             "label": "build main,tle,generate for oj hack",
             "dependsOrder": "parallel",
             "dependsOn": [
-                "main.cpp debug build",
-                "tle.cpp normal build",
-                "generate.cpp normal build"
+                "main file debug build",
+                "tle file normal build",
+                "generate file normal build"
             ],
             "hide": true
         },
         {
             "type": "cppbuild",
-            "label": "generate.cpp debug build",
+            "label": "generate file debug build",
             "detail": "開いているファイルと同じディレクトリにあるgenerate.cppをデバッグビルドする",
             "command": "/usr/local/bin/g++",
             "args": [
                 "-std=gnu++23",
-                "generate.cpp",
+                "${fileDirnameBasename}_generate.cpp",
                 "-o",
-                "${fileDirname}/generate.out",
+                "${fileDirnameBasename}_generate.out",
                 "-g",
                 "-O0",
                 "-I",
@@ -288,14 +288,14 @@
         },
         {
             "type": "cppbuild",
-            "label": "generate.cpp normal build",
+            "label": "generate file normal build",
             "detail": "開いているファイルと同じディレクトリにあるgenerate.cppを通常ビルドする",
             "command": "/usr/local/bin/g++",
             "args": [
                 "-std=gnu++23",
-                "generate.cpp",
+                "${fileDirnameBasename}_generate.cpp",
                 "-o",
-                "${fileDirname}/generate.out",
+                "${fileDirnameBasename}_generate.out",
                 "-O2",
                 "-I",
                 "${workspaceFolder}/library/*"
@@ -310,14 +310,14 @@
         },
         {
             "type": "cppbuild",
-            "label": "tle.cpp debug build",
+            "label": "tle file debug build",
             "detail": "開いているファイルと同じディレクトリにあるtle.cppをデバッグビルドする",
             "command": "/usr/local/bin/g++",
             "args": [
                 "-std=gnu++23",
-                "tle.cpp",
+                "${fileDirnameBasename}_tle.cpp",
                 "-o",
-                "${fileDirname}/tle.out",
+                "${fileDirnameBasename}_tle.out",
                 "-g",
                 "-O0",
                 "-I",
@@ -351,14 +351,14 @@
         },
         {
             "type": "cppbuild",
-            "label": "tle.cpp normal build",
+            "label": "tle file normal build",
             "detail": "開いているファイルと同じディレクトリにあるtle.cppを通常ビルドする",
             "command": "/usr/local/bin/g++",
             "args": [
                 "-std=gnu++23",
-                "tle.cpp",
+                "${fileDirnameBasename}_tle.cpp",
                 "-o",
-                "${fileDirname}/tle.out",
+                "${fileDirnameBasename}_tle.out",
                 "-O2",
                 "-I",
                 "${workspaceFolder}/library/*"
@@ -373,14 +373,14 @@
         },
         {
             "type": "cppbuild",
-            "label": "main.cpp debug build",
+            "label": "main file debug build",
             "detail": "開いているファイルと同じディレクトリにあるmain.cppをデバッグビルドする",
             "command": "/usr/local/bin/g++",
             "args": [
                 "-std=gnu++23",
-                "main.cpp",
+                "${fileDirnameBasename}_main.cpp",
                 "-o",
-                "${fileDirname}/main.out",
+                "${fileDirnameBasename}_main.out",
                 "-g",
                 "-O0",
                 "-I",
@@ -414,14 +414,14 @@
         },
         {
             "type": "cppbuild",
-            "label": "main.cpp normal build",
+            "label": "main file normal build",
             "detail": "開いているファイルと同じディレクトリにあるmain.cppを通常ビルドする",
             "command": "/usr/local/bin/g++",
             "args": [
                 "-std=gnu++23",
-                "main.cpp",
+                "${fileDirnameBasename}_main.cpp",
                 "-o",
-                "${fileDirname}/main.out",
+                "${fileDirnameBasename}_main.out",
                 "-O2",
                 "-I",
                 "${workspaceFolder}/library/*"
@@ -442,7 +442,7 @@
                 "-std=gnu++23",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}.out",
+                "${fileBasenameNoExtension}.out",
                 "-g",
                 "-O0",
                 "-I",
@@ -485,7 +485,7 @@
                 "-std=gnu++23",
                 "${file}",
                 "-o",
-                "${fileDirname}/${fileBasenameNoExtension}.out",
+                "${fileBasenameNoExtension}.out",
                 "-O2",
                 "-I",
                 "${workspaceFolder}/library/*"
@@ -504,7 +504,7 @@
     ],
     "inputs": [
         {
-            "id": "contestId",
+            "id": "ContestId",
             "description": "コンテストidを入力（https://atcoder.jp/contests/abc123ならabc123）",
             "type": "promptString"
         }
