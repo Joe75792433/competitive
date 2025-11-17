@@ -31,8 +31,8 @@ USER $USERNAME
 USER root
 RUN cd /usr/local/include/c++/15.2.0/x86_64-linux-gnu/bits/ \
     && mkdir stdc++.h.gch \
-    && g++ -std=gnu++23 stdc++.h -o stdc++.h.gch/debug.gch -g -O0 -I $LIBRARY_PATH/* -DDEBUG -D_FORTIFY_SOURCE=2 -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -fdiagnostics-color=always -fno-sanitize-recover -fsanitize=undefined,address -Wall -Wextra -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align=strict \
-    && g++ -std=gnu++23 stdc++.h -o stdc++.h.gch/normal.gch -O2 -I $LIBRARY_PATH/*
+    && g++ -std=gnu++23 stdc++.h -o stdc++.h.gch/debug.gch -g -O0 -DDEBUG -D_FORTIFY_SOURCE=2 -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -fdiagnostics-color=always -fno-sanitize-recover -fsanitize=undefined,address -Wall -Wextra -Wshadow -Wformat=2 -Wfloat-equal -Wconversion -Wlogical-op -Wshift-overflow=2 -Wduplicated-cond -Wcast-qual -Wcast-align=strict \
+    && g++ -std=gnu++23 stdc++.h -o stdc++.h.gch/normal.gch -O2
 USER $USERNAME
 
 ##

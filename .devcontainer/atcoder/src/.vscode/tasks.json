@@ -56,7 +56,7 @@
             "command": "oj-bundle",
             "args": [
                 "-I",
-                "${workspaceFolder}/library/*",
+                "${workspaceFolder}/library/ac-library",
                 "${fileBasename}",
                 ">",
                 "${fileBasenameNoExtension}_expanded.cpp"
@@ -296,9 +296,7 @@
                 "${fileDirnameBasename}_generate.cpp",
                 "-o",
                 "${fileDirnameBasename}_generate.out",
-                "-O2",
-                "-I",
-                "${workspaceFolder}/library/*"
+                "-O2"
             ],
             "options": {
                 "cwd": "${fileDirname}"
@@ -320,8 +318,6 @@
                 "${fileDirnameBasename}_tle.out",
                 "-g",
                 "-O0",
-                "-I",
-                "${workspaceFolder}/library/*",
                 "-DDEBUG",
                 "-D_FORTIFY_SOURCE=2",
                 "-D_GLIBCXX_DEBUG",
@@ -359,9 +355,7 @@
                 "${fileDirnameBasename}_tle.cpp",
                 "-o",
                 "${fileDirnameBasename}_tle.out",
-                "-O2",
-                "-I",
-                "${workspaceFolder}/library/*"
+                "-O2"
             ],
             "options": {
                 "cwd": "${fileDirname}"
@@ -383,8 +377,6 @@
                 "${fileDirnameBasename}_main.out",
                 "-g",
                 "-O0",
-                "-I",
-                "${workspaceFolder}/library/*",
                 "-DDEBUG",
                 "-D_FORTIFY_SOURCE=2",
                 "-D_GLIBCXX_DEBUG",
@@ -422,9 +414,7 @@
                 "${fileDirnameBasename}_main.cpp",
                 "-o",
                 "${fileDirnameBasename}_main.out",
-                "-O2",
-                "-I",
-                "${workspaceFolder}/library/*"
+                "-O2"
             ],
             "options": {
                 "cwd": "${fileDirname}"
@@ -445,8 +435,6 @@
                 "${fileBasenameNoExtension}.out",
                 "-g",
                 "-O0",
-                "-I",
-                "${workspaceFolder}/library/*",
                 "-DDEBUG",
                 "-D_FORTIFY_SOURCE=2",
                 "-D_GLIBCXX_DEBUG",
@@ -486,9 +474,7 @@
                 "${file}",
                 "-o",
                 "${fileBasenameNoExtension}.out",
-                "-O2",
-                "-I",
-                "${workspaceFolder}/library/*"
+                "-O2"
             ],
             "options": {
                 "cwd": "${fileDirname}"
