@@ -257,8 +257,6 @@
                 "${fileDirnameBasename}_generate.out",
                 "-g",
                 "-O0",
-                "-I",
-                "${workspaceFolder}/library/*",
                 "-DDEBUG",
                 "-D_FORTIFY_SOURCE=2",
                 "-D_GLIBCXX_DEBUG",
