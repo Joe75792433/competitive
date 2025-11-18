@@ -55,8 +55,11 @@
             "label": "execute oj-bundle",
             "command": "oj-bundle",
             "args": [
-                "-I",
-                "${workspaceFolder}/library/ac-library",
+                "$(",
+                "python3",
+                "${workspaceFolder}/script/include-path-args.py",
+                "${workspaceFolder}/library",
+                ")",
                 "${fileBasename}",
                 ">",
                 "${fileBasenameNoExtension}_expanded.cpp"
@@ -257,6 +260,11 @@
                 "${fileDirnameBasename}_generate.out",
                 "-g",
                 "-O0",
+                "$(",
+                "python3",
+                "${workspaceFolder}/script/include-path-args.py",
+                "${workspaceFolder}/library",
+                ")",
                 "-DDEBUG",
                 "-D_FORTIFY_SOURCE=2",
                 "-D_GLIBCXX_DEBUG",
@@ -294,7 +302,12 @@
                 "${fileDirnameBasename}_generate.cpp",
                 "-o",
                 "${fileDirnameBasename}_generate.out",
-                "-O2"
+                "-O2",
+                "$(",
+                "python3",
+                "${workspaceFolder}/script/include-path-args.py",
+                "${workspaceFolder}/library",
+                ")"
             ],
             "options": {
                 "cwd": "${fileDirname}"
@@ -316,6 +329,11 @@
                 "${fileDirnameBasename}_tle.out",
                 "-g",
                 "-O0",
+                "$(",
+                "python3",
+                "${workspaceFolder}/script/include-path-args.py",
+                "${workspaceFolder}/library",
+                ")",
                 "-DDEBUG",
                 "-D_FORTIFY_SOURCE=2",
                 "-D_GLIBCXX_DEBUG",
@@ -353,7 +371,12 @@
                 "${fileDirnameBasename}_tle.cpp",
                 "-o",
                 "${fileDirnameBasename}_tle.out",
-                "-O2"
+                "-O2",
+                "$(",
+                "python3",
+                "${workspaceFolder}/script/include-path-args.py",
+                "${workspaceFolder}/library",
+                ")"
             ],
             "options": {
                 "cwd": "${fileDirname}"
@@ -375,6 +398,11 @@
                 "${fileDirnameBasename}_main.out",
                 "-g",
                 "-O0",
+                "$(",
+                "python3",
+                "${workspaceFolder}/script/include-path-args.py",
+                "${workspaceFolder}/library",
+                ")",
                 "-DDEBUG",
                 "-D_FORTIFY_SOURCE=2",
                 "-D_GLIBCXX_DEBUG",
@@ -412,7 +440,12 @@
                 "${fileDirnameBasename}_main.cpp",
                 "-o",
                 "${fileDirnameBasename}_main.out",
-                "-O2"
+                "-O2",
+                "$(",
+                "python3",
+                "${workspaceFolder}/script/include-path-args.py",
+                "${workspaceFolder}/library",
+                ")"
             ],
             "options": {
                 "cwd": "${fileDirname}"
@@ -428,11 +461,16 @@
             "command": "/usr/local/bin/g++",
             "args": [
                 "-std=gnu++23",
-                "${file}",
+                "${fileBasename}",
                 "-o",
                 "${fileBasenameNoExtension}.out",
                 "-g",
                 "-O0",
+                "$(",
+                "python3",
+                "${workspaceFolder}/script/include-path-args.py",
+                "${workspaceFolder}/library",
+                ")",
                 "-DDEBUG",
                 "-D_FORTIFY_SOURCE=2",
                 "-D_GLIBCXX_DEBUG",
@@ -469,10 +507,15 @@
             "command": "/usr/local/bin/g++",
             "args": [
                 "-std=gnu++23",
-                "${file}",
+                "${fileBasename}",
                 "-o",
                 "${fileBasenameNoExtension}.out",
-                "-O2"
+                "-O2",
+                "$(",
+                "python3",
+                "${workspaceFolder}/script/include-path-args.py",
+                "${workspaceFolder}/library",
+                ")"
             ],
             "options": {
                 "cwd": "${fileDirname}"
