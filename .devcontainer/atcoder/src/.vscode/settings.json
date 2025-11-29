@@ -5,5 +5,6 @@
     "editor.acceptSuggestionOnEnter": "off",
     "files.eol": "\n",
     "editor.wrappingIndent": "deepIndent",
-    "explorer.confirmDragAndDrop": false
+    "explorer.confirmDragAndDrop": false,
+    "git.repositoryScanMaxDepth": 2
 }
