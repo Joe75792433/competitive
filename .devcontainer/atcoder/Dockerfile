@@ -56,7 +56,7 @@ RUN apt-get update \
 USER $USERNAME
 RUN pipx ensurepath
 RUN pipx install online-judge-tools
-RUN pipx install git+https://github.com/Joe75792433/verification-helper
+RUN pipx install online-judge-verify-helper
 RUN pipx install online-judge-template-generator
 
 ##
