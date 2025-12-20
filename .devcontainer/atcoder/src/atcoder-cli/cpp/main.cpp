@@ -2,10 +2,14 @@
 #include <atcoder/modint>
 #include "cplib/vector_io.hpp"
 
+using namespace std;
+using namespace atcoder;
+using namespace cplib;
+
 #ifdef DEBUG
     template<typename T, typename U>
     void debug_print(T var_name, U value) {
-        std::cerr << var_name << ": " << value << std::endl;
+        cerr << var_name << ": " << value << endl;
     }
     #define debug(x) debug_print(#x, x)
     constexpr bool is_debug = true;
@@ -16,10 +20,6 @@
     #define debug(x)
     constexpr bool is_debug = false;
 #endif
-
-using namespace std;
-using namespace atcoder;
-//using namespace cplib;
 
 using ll = long long;
 template <typename T>
