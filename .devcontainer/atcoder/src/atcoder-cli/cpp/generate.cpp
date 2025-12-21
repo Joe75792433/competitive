@@ -30,28 +30,28 @@ template <typename T> using vector4 = vector<vector3<T>>;
 template <typename T> using vector5 = vector<vector4<T>>;
 template <typename T> using vector6 = vector<vector5<T>>;
 template <typename T>
-inline vector2<T> make_vector2(const size_t l0, const size_t l1, const T& init = T{}) {
+inline vector2<T> make_vector2(const size_t l0, const size_t l1, const T& init = T()) {
     return vector2<T>(l0, vector<T>(l1, init));
 }
 template <typename T>
 inline vector3<T> make_vector3(const size_t l0, const size_t l1, const size_t l2,
-                               const T& init = T{}) {
+                               const T& init = T()) {
     return vector3<T>(l0, make_vector2<T>(l1, l2, init));
 }
 template <typename T>
 inline vector4<T> make_vector4(const size_t l0, const size_t l1, const size_t l2,
-                               const size_t l3, const T& init = T{}) {
+                               const size_t l3, const T& init = T()) {
     return vector4<T>(l0, make_vector3<T>(l1, l2, l3, init));
 }
 template <typename T>
 inline vector5<T> make_vector5(const size_t l0, const size_t l1, const size_t l2,
-                               const size_t l3, const size_t l4, const T& init = T{}) {
+                               const size_t l3, const size_t l4, const T& init = T()) {
     return vector5<T>(l0, make_vector4<T>(l1, l2, l3, l4, init));
 }
 template <typename T>
 inline vector6<T> make_vector6(const size_t l0, const size_t l1, const size_t l2,
                                const size_t l3, const size_t l4, const size_t l5,
-                               const T& init = T{}) {
+                               const T& init = T()) {
     return vector6<T>(l0, make_vector5<T>(l1, l2, l3, l4, l5, init));
 }
 
@@ -63,9 +63,9 @@ inline vector6<T> make_vector6(const size_t l0, const size_t l1, const size_t l2
 #define repr(i, a, b) for (auto i = (b)-1; i >= (a); --i)
 #define foreach(x, a) for (auto &x : (a))
 
-void din_(){}
+inline void din_(){}
 template<class Head, class ... Tail>
-void din_(Head&& head, Tail&& ... tail) {
+inline void din_(Head&& head, Tail&& ... tail) {
     cin >> head;
     din_(move(tail)...);
 }
@@ -73,14 +73,14 @@ void din_(Head&& head, Tail&& ... tail) {
 
 inline void dout() { cout << '\n'; }
 template<typename Head, typename ... Tail>
-void dout(const Head head, const Tail ... tail) {
+inline void dout(const Head& head, const Tail& ... tail) {
     cout << head;
     if constexpr (sizeof...(tail) > 0) { cout << ' '; }
     dout(tail...);
 }
 
 template<class T = ll>
-T IN(){T x; cin >> x; return (x);}
+inline T IN(){T x; cin >> x; return (x);}
 
 inline void YesNo(bool b, const string yes, const string no) noexcept {
     cout << (b ? yes : no) << '\n';
@@ -107,10 +107,10 @@ template<typename T> inline void uniq(vector<T> &v) {
 
 template<class T1, class T2>
     requires totally_ordered_with<T1, T2> && assignable_from<T1&, T2>
-inline bool chmax(T1 &a, const T2 &b) noexcept { if (a < b) { a = b; return true; } return false; }
+constexpr bool chmax(T1 &a, const T2 &b) noexcept { if (a < b) { a = b; return true; } return false; }
 template<class T1, class T2>
     requires totally_ordered_with<T1, T2> && assignable_from<T1&, T2>
-inline bool chmin(T1 &a, const T2 &b) noexcept { if (a > b) { a = b; return true; } return false; }
+constexpr bool chmin(T1 &a, const T2 &b) noexcept { if (a > b) { a = b; return true; } return false; }
 
 constexpr char enl = '\n';
 constexpr int dx[] = {1, 0, -1, 0, 1, -1, -1, 1};
