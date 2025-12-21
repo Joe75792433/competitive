@@ -19,6 +19,6 @@ cp $SECRET_FOLDER/atcoder/session.json ~/.config/atcoder-cli-nodejs/session.json
 cd $WORKSPACE_FOLDER
 sudo chown -R vscode:vscode venv
 python3 -m venv venv
-. venv/bin/activate
+source venv/bin/activate
 pip install -r $SRC_FOLDER/requirements.txt
 deactivate
