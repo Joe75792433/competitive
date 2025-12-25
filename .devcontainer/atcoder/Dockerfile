@@ -1,4 +1,4 @@
-FROM gcc:15.2.0-bookworm
+FROM gcc:15.2.0-trixie
 
 ARG USERNAME=vscode
 ARG USER_UID=1000
@@ -55,9 +55,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 USER $USERNAME
 RUN pipx ensurepath
-RUN pipx install online-judge-tools
-RUN pipx install online-judge-verify-helper
-RUN pipx install online-judge-template-generator
+RUN pipx install --preinstall "setuptools<81" online-judge-tools online-judge-verify-helper online-judge-template-generator
 
 ##
 # install atcoder-cli

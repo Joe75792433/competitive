@@ -24,5 +24,5 @@ pip install -r $SRC_FOLDER/requirements.txt
 deactivate
 
 # replace KB/MB with KiB/MiB for oj submit
-sed -i s/KB/KiB/g ~/.local/pipx/venvs/online-judge-tools/lib/python3.11/site-packages/onlinejudge/service/atcoder.py
-sed -i s/MB/MiB/g ~/.local/pipx/venvs/online-judge-tools/lib/python3.11/site-packages/onlinejudge/service/atcoder.py
+sed -i s/KB/KiB/g ~/.local/share/pipx/venvs/online-judge-tools/lib/python3.13/site-packages/onlinejudge/service/atcoder.py
+sed -i s/MB/MiB/g ~/.local/share/pipx/venvs/online-judge-tools/lib/python3.13/site-packages/onlinejudge/service/atcoder.py
