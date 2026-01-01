@@ -19,7 +19,7 @@
 
 using namespace std;
 using namespace atcoder;
-//using namespace cplib;
+using namespace cplib;
 
 using ll = long long;
 template <typename T>
@@ -141,5 +141,6 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     cout << fixed << setprecision(15);
+    cerr << fixed << setprecision(15);
     Main();
 }

@@ -129,6 +129,7 @@ int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
     cout << fixed << setprecision(15);
+    cerr << fixed << setprecision(15);
     int t = 1;
     //cin >> t;
     rep(i, t) Main(i);
