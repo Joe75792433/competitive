@@ -72,7 +72,12 @@ RUN . $HOME/.nvm/nvm.sh \
 ##
 USER root
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends build-essential python3-dev \
+    && apt-get install -y --no-install-recommends build-essential python3-dev vim \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 USER $USERNAME
+RUN pipx install rime statements-manager
+RUN cd ~/.local/bin \
+    && wget https://github.com/koyumeishi/yukicoder-md/releases/download/v0.1.0/yukicoder-md-x86_64-unknown-linux-gnu.zip \
+    && unzip yukicoder-md-x86_64-unknown-linux-gnu.zip \
+    && rm yukicoder-md-x86_64-unknown-linux-gnu.zip
