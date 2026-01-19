@@ -164,11 +164,11 @@
             "hide": true
         },
         {
-            "label": "main,generateを使ってREケースを見つける",
-            "detail": "開いているファイルと同じフォルダのmain,generateをビルドしてoj g/i --hackを実行する",
+            "label": "main,generatorを使ってREケースを見つける",
+            "detail": "開いているファイルと同じフォルダのmain,generatorをビルドしてoj g/i --hackを実行する",
             "dependsOrder": "sequence",
             "dependsOn": [
-                "build main,generate for oj hack",
+                "build main,generator for oj hack",
                 "execute oj g/i hack with 2 files"
             ],
             "group": {
@@ -188,7 +188,7 @@
                 "4",
                 "--hack",
                 "./${fileDirnameBasename}_main.out",
-                "./${fileDirnameBasename}_generate.out"
+                "./${fileDirnameBasename}_generator.out"
             ],
             "options": {
                 "cwd": "${fileDirname}"
@@ -196,20 +196,20 @@
             "hide": true
         },
         {
-            "label": "build main,generate for oj hack",
+            "label": "build main,generator for oj hack",
             "dependsOrder": "parallel",
             "dependsOn": [
                 "main file debug build",
-                "generate file normal build"
+                "generator file normal build"
             ],
             "hide": true
         },
         {
-            "label": "main,tle,generateを使ってWAケースを見つける",
-            "detail": "開いているファイルと同じフォルダのmain,tle,generateをビルドしてoj g/i --hackを実行する",
+            "label": "main,tle,generatorを使ってWAケースを見つける",
+            "detail": "開いているファイルと同じフォルダのmain,tle,generatorをビルドしてoj g/i --hackを実行する",
             "dependsOrder": "sequence",
             "dependsOn": [
-                "build main,tle,generate for oj hack",
+                "build main,tle,generator for oj hack",
                 "execute oj g/i hack with 3 files"
             ],
             "group": {
@@ -231,7 +231,7 @@
                 "./${fileDirnameBasename}_tle.out",
                 "--hack",
                 "./${fileDirnameBasename}_main.out",
-                "./${fileDirnameBasename}_generate.out"
+                "./${fileDirnameBasename}_generator.out"
             ],
             "options": {
                 "cwd": "${fileDirname}"
@@ -239,25 +239,25 @@
             "hide": true
         },
         {
-            "label": "build main,tle,generate for oj hack",
+            "label": "build main,tle,generator for oj hack",
             "dependsOrder": "parallel",
             "dependsOn": [
                 "main file debug build",
                 "tle file normal build",
-                "generate file normal build"
+                "generator file normal build"
             ],
             "hide": true
         },
         {
             "type": "cppbuild",
-            "label": "generate file debug build",
-            "detail": "開いているファイルと同じディレクトリにあるgenerate.cppをデバッグビルドする",
+            "label": "generator file debug build",
+            "detail": "開いているファイルと同じディレクトリにあるgenerator.cppをデバッグビルドする",
             "command": "/usr/local/bin/g++",
             "args": [
                 "-std=gnu++23",
-                "${fileDirnameBasename}_generate.cpp",
+                "${fileDirnameBasename}_generator.cpp",
                 "-o",
-                "${fileDirnameBasename}_generate.out",
+                "${fileDirnameBasename}_generator.out",
                 "-g",
                 "-O0",
                 "$(",
@@ -294,14 +294,14 @@
         },
         {
             "type": "cppbuild",
-            "label": "generate file normal build",
-            "detail": "開いているファイルと同じディレクトリにあるgenerate.cppを通常ビルドする",
+            "label": "generator file normal build",
+            "detail": "開いているファイルと同じディレクトリにあるgenerator.cppを通常ビルドする",
             "command": "/usr/local/bin/g++",
             "args": [
                 "-std=gnu++23",
-                "${fileDirnameBasename}_generate.cpp",
+                "${fileDirnameBasename}_generator.cpp",
                 "-o",
-                "${fileDirnameBasename}_generate.out",
+                "${fileDirnameBasename}_generator.out",
                 "-O2",
                 "$(",
                 "python3",
